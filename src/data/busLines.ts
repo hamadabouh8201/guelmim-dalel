@@ -14,7 +14,18 @@ export interface BusLine {
 }
 
 export const busLines: BusLine[] = [
- 
+  {
+    id: "l1",
+    name: "الخط 1",
+    code: "L1",
+    description: "خط رئيسي يربط بين مركز المدينة وبعض الأحياء السكنية.",
+    neighborhoods: "حي الرحمة – شارع محمد السادس – حي الفتح",
+    main_stops: "المستشفى الجهوي – السوق الجديد – المحطة الطرقية",
+    schedule_morning: "من 06:00 إلى 12:00",
+    schedule_afternoon: "من 12:00 إلى 18:00",
+    schedule_evening: "من 18:00 إلى 23:00",
+    notes: "مفيد للتنقل اليومي نحو الخدمات الأساسية."
+  },
   {
     id: "l2",
     name: "الخط 2",
