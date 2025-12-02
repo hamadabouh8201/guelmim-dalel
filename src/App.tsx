@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import AdminBus from "./pages/AdminBus";
 import Admin from "./pages/Admin";
 import SearchPage from "./pages/Search";
+import AuthoritiesPage from "./pages/AuthoritiesPage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/places" element={<Places />} />
             <Route path="/numbers" element={<ImportantNumbers />} />
             <Route path="/about" element={<About />} />
+            <Route path="/authorities" element={<AuthoritiesPage />} />
             <Route path="/submit-business" element={<SubmitBusiness />} />
             <Route path="/admin-bus" element={<AdminBus />} />
             <Route path="/admin" element={<Admin />} />

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Bus, Building2, GraduationCap, Store, Phone, Search } from "lucide-react";
+import { Bus, Building2, GraduationCap, Store, Phone, Search, Landmark } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -53,6 +53,15 @@ const Home = () => {
       bgColor: "from-primary/10 to-primary/5",
       iconColor: "text-primary",
     },
+     {
+    to: "/authorities",
+    icon: Landmark,
+    title: "السلطات الترابية",
+    titleFr: "Autorités territoriales",
+    description: "Wilaya, pachalik, caïdats...",
+    bgColor: "from-secondary/10 to-secondary/5",
+    iconColor: "text-secondary",
+  },
     {
       to: "/numbers",
       icon: Phone,
