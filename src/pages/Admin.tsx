@@ -1,20 +1,40 @@
 import { useEffect, useState } from "react";
-import { Bus, Building2, GraduationCap, Store, Phone } from "lucide-react";
+import {
+  Bus,
+  Building2,
+  GraduationCap,
+  Store,
+  Phone,
+  Landmark,
+} from "lucide-react";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/ui/tabs";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
 
 import AdminBus from "./AdminBus";
 import AdminServices from "./AdminServices";
 import AdminEducation from "./AdminEducation";
 import AdminCommerces from "./AdminCommerces";
 import AdminNumbers from "./AdminNumbers";
+import AdminAuthorities from "./AdminAuthorities";
+
+
 
 // الكود السري ديال لوحة الإدارة
 const ADMIN_CODE = "Khalid@2025";
 
 const Admin = () => {
-  const [tab, setTab] = useState<string>("bus");
+  const [tab, setTab] = useState("bus");
 
   // حالة الكود السري
   const [code, setCode] = useState("");
@@ -28,7 +48,7 @@ const Admin = () => {
     }
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (code === ADMIN_CODE) {
       setAuthorized(true);
@@ -50,7 +70,10 @@ const Admin = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-slate-600 mb-4 text-center" dir="rtl">
+            <p
+              className="text-sm text-slate-600 mb-4 text-center"
+              dir="rtl"
+            >
               المرجو إدخال الكود السري للولوج إلى صفحة الإدارة
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -79,9 +102,12 @@ const Admin = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Panneau d'administration</h1>
+        <h1 className="text-3xl font-bold mb-2">
+          Panneau d&apos;administration
+        </h1>
         <p className="text-muted-foreground" dir="rtl">
-          من هنا تقدر تتحكم فالحافلات، الخدمات، التعليم، المحلات، والأرقام المهمة
+          من هنا تقدر تتحكم فالحافلات، الخدمات الإدارية، التعليم، المحلات،
+          الأرقام المهمة، والسلطات الترابية
         </p>
       </div>
 
@@ -92,21 +118,33 @@ const Admin = () => {
             <Bus className="h-4 w-4" />
             Bus
           </TabsTrigger>
+
           <TabsTrigger value="services" className="flex items-center gap-1">
             <Building2 className="h-4 w-4" />
             Services
           </TabsTrigger>
+
           <TabsTrigger value="education" className="flex items-center gap-1">
             <GraduationCap className="h-4 w-4" />
             Éducation
           </TabsTrigger>
+
           <TabsTrigger value="commerces" className="flex items-center gap-1">
             <Store className="h-4 w-4" />
             Commerces
           </TabsTrigger>
+
           <TabsTrigger value="numbers" className="flex items-center gap-1">
             <Phone className="h-4 w-4" />
             Numéros
+          </TabsTrigger>
+
+          <TabsTrigger
+            value="authorities"
+            className="flex items-center gap-1"
+          >
+            <Landmark className="h-4 w-4" />
+            Autorités
           </TabsTrigger>
         </TabsList>
 
@@ -133,6 +171,11 @@ const Admin = () => {
         {/* TAB: Numbers */}
         <TabsContent value="numbers">
           <AdminNumbers />
+        </TabsContent>
+
+        {/* TAB: Authorities */}
+        <TabsContent value="authorities">
+          <AdminAuthorities />
         </TabsContent>
       </Tabs>
     </div>
